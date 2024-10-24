@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>universidades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">universidades</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-input [(ngModel)]="country" placeholder="Ingresa el país"></ion-input>
+    <ion-button (click)="searchUniversities()">Buscar Universidades</ion-button>
+  
+    <div *ngFor="let uni of universities">
+      <h3>{{ uni.name }}</h3>
+      <p>{{ uni.web_pages[0] }}</p>
+      <a [href]="uni.web_pages[0]">Visitar</a>
+    </div>
+  </ion-content>
+
+</ion-content>
